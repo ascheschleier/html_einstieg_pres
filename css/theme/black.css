@@ -271,3 +271,13 @@ body {
 @media print {
   .backgrounds {
     background-color: #222; } }
+
+/*********************************************
+ * ADDITIONAL STYLES
+ *********************************************/
+.color {
+  color: #ebb100 !important;
+}
+.small {
+  font-size: .45em !important;
+}

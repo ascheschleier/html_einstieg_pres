@@ -1,49 +1,791 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+	<title>Einführung HTML und CSS</title>
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1 class="color">
+					HTML und CSS
+				</h1>
+				<h4>Einführung in die Code Welt des Web</h4>
+				<!--a href="#" onclick="jumptolast()" class="jumptolast">
+					JumpToLast Slide
+				</a-->
+			</section>
+
+			<section>
+				<h2>über mich:</h2>
+				<div>
+					David Ziegler<br>
+					Diplom Designer <br>
+					Freelance Frontend Developer <br>
+				</div>			
+				<aside class="notes">
+					Wenn Ihr fragen habt oder etwas unklar ist, fragt einfach!
+				</aside>	
+			</section>
+
+			<section>
+				<h2>
+					Was wir heute behandeln werden:
+				</h2>
+				<h3 class="color fragment">HTML</h2>
+				<h3 class="color fragment">CSS</h2>
+			</section>
+
+			<section>
+				<h2><span class="color">H</span>yper <span class="color">T</span>ext <span class="color">M</span>arkup <span class="color">L</span>anguage</h2>
+
+				<div class="fragment">
+					<pre><code data-trim contenteditable>
+					&lt;tag&gt;
+						Inhalt (content)
+					&lt;/tag&gt;
+					</code></pre>
+					<p class="fragment">
+						<br>
+							Tags werden nicht im Browser dargestellt. <br><br>
+							Dargestellt wird der Inhalt zwischen den Tags.
+						</p>
+				</div>
+				<aside class="notes">
+					HTML ist eine Sprache um Informationen und Inhalte zu strukturieren und miteinander zu vernetzen.
+					<br>
+					keine programiersprache in diesem sinne, da sie keine LOGIK enthält sondern rein DEKLARATIV ist
+					<br>
+					Sie basiert auf TAGs
+				</aside>
+			</section>
+
+			<section>
+				<h2>Jede Website ist mit HTML aufgebaut</h2>
+				<h4 class="fragment">
+					Der grundsätzliche Aufbau ist immer gleich:
+				</h4>
+				<pre class="fragment"><code data-trim contenteditable>
+						&lt;!DOCTYPE html&gt;
+						&lt;html&gt;
+							&lt;head&gt;
+							&lt;/head&gt;
+
+							&lt;body&gt;
+							&lt;/body&gt;
+						&lt;/html&gt;
+				</code></pre>
+
+				<aside class="notes">
+					Das wird euch in wirklich jeder webseite begegnen!
+				</aside>
+			</section>
+
+			<section>
+				<pre><code data-trim contenteditable>
+						&lt;!DOCTYPE html&gt;		
+				</code></pre>
+				<div class="fragment">
+					<p>
+						Beschreibt die Art des HTML Dokuments (in diesem Fall HTML5). Wird benötigt um dem Browser mitzuteilen, wie er das
+						Dokument interpretieren soll.
+					</p>
+
+					<p>
+						<span class="color">Wichtig!</span> Hat kein schließendes Tag!
+					</p>
+				</div>
+			</section>
+
+			<section>
+				<pre><code data-trim contenteditable>							
+				&lt;html&gt;
+				&lt;/html&gt;
+				</code></pre>
+				<p class="fragment">
+					Ab hier gehts los mit HTML.
+				</p>
+			</section>
+
+			<section>
+				<pre><code data-trim contenteditable>						
+					&lt;head&gt;
+					&lt;/head&gt;
+				</code></pre>
+				<p class="fragment">
+					Der "Kopf" der Seite. Hier werden hauptsächlich Metadaten abgelegt, wie der Titel der Seite, der Autor oder
+					Links der zu benutzten Styles. <br>					
+				</p>
+				<p class="fragment">
+					<span class="color">Kurz:</span> All die Informationen, die NICHT direkt im Browserfenster dargestellt werden.
+				</p>
+			</section>
+
+			<section>
+				<pre><code data-trim contenteditable>
+							&lt;body&gt;
+							&lt;/body&gt;
+				</code></pre>
+				<p class="fragment">					
+					Hier wird jetzt alles drin sein, was tatsächlich im Browser dargestellt wird. <br>
+					Also <span class="color">viele</span> weitere Tags.
+				</p>
+				<aside class="notes">
+					
+				</aside>
+			</section>
+
+			<section>
+				<p>
+					Auch wenn HTML keine Programiersprache im eigentlichen Sinne ist, ist sie doch eine Sprache. 
+					<br>
+					Und wie in jeder Sprache muss man Vokabeln lernen.
+				</p>
+				<p class="fragment small">
+					Weitere häufige Tags:
+				</p>
+				<pre class="fragment"><code data-trim contenteditable>						
+					&lt;div&gt;
+					&lt;/div&gt;
+
+					&lt;span&gt;
+					&lt;/span&gt;
+
+					&lt;p&gt;
+					&lt;/p&gt;
+
+					&lt;a href="#"&gt;
+					&lt;/a&gt;
+
+					&lt;img src="pfad/zum/bild.jpg" /&gt;			
+				</code></pre>
+				<p class="fragment">
+					<a target="_blank" href="https://www.mediaevent.de/xhtml/html5-tags.html">Alle HTML-Tags im Überblick</a>
+				</p>
+			</section>
+
+			<section>
+				<h2>Attribute</h2>
+
+				<p class="fragment">
+					Tags können Attribute haben. Die Häufigsten sind <span class="color">Klasse</span> und <span class="color">ID</span>.
+				</p>
+				<pre class="fragment"><code data-trim contenteditable>						
+								&lt;body class="nameDerKlasse" id="nameDerId"&gt;&lt;/body&gt;</code></pre>
+
+				<p class="fragment">
+					Der Name der Attribute ist frei wählbar.
+				</p>
+			</section>
+
+			<section>
+				<h2>Sind wirklich <span class="color">ALLE</span> Webseiten so aufgebaut?</h2>
+				<p class="fragment">
+					Geht auf eine beliebige Seite, clickt rechts und wählt "Seitenquelltext anzeigen". <br>					
+				</p>
+				<p class="fragment">
+					Ganz oben werdet Ihr unter Garantie das <span class="color">&lt;!DOCTYPE&gt;</span> Tag finden. <br>					
+				</p>
+				<p class="fragment">
+					Die anderen Tags werden im Chaos schon schwerer zu finden sein. <br>
+				</p>
+				<p class="fragment">
+					Findet Ihr das schließende <span class="color">&lt;/head&gt;</span> Tag, und den darauf folgenden <span class="color">&lt;body&gt;</span>?
+				</p>
+			</section>
+
+			<section>
+					<h1 class="color">Das Box Modell</h1>
+			</section>
+
+			<section>
+				<h2>Das Box Modell</h2>
+
+				<p>
+					Grundsätzlich haben alle Tags eine gemeinsame Eigenschaft: Sie sind rechteckig! <br>					
+				</p>
+				<p class="fragment">
+					Wir können jedoch nicht bei allen Tags Höhe und Breite bestimmen. Wir unterscheiden generell zwischen <span class="color">Block</span> Elementen und <span class="color">Inline</span> Elementen.
+				</p>
+
+				<aside class="notes">
+					man kann sich das wie ganz viele boxen vorstellen, die sich auf der zur verfügung stehenden fläche anordnen.
+				</aside>
+			</section>
+
+			<section>
+				<h2>Block Elemente</h2>
+
+				<p class="fragment">
+					Block Elemente haben eine von uns festlegbare Höhe und Breite. <!--, die durch die CSS Anweisung <span class="color">height:</span> bzw. <span class="color">width:</span> festgelegt werden können. --> <br>						
+				</p>
+
+				<p class="fragment">
+						Sie können auch einen <span class="color">Innenabstand</span> <!-- (<span class="color">padding:</span>) --> oder <span class="color">Außenabstand</span> <!--(<span class="color">margin:</span>) --> mitbringen.
+				</p>
+
+				<p class="fragment">
+					<span class="color">
+						&lt;div&gt;
+					</span>
+					Tags sind z.B. grundsätzlich Block Elemente.
+				</p>
+			</section>
+
+			<section>
+				<h2>Inline Elemente</h2>
+
+				<p class="fragment">
+					Bei Inline Elementen werden die Maße durch den Inhalt vorgegeben. <br>						
+				</p>
+				<p class="fragment">
+						Sie ignorieren Angaben wie <span class="color">Höhe</span> oder <span class="color">Breite</span> und richten sich satt dessen nach Ihrem <span class="color">Inhalt</span>.
+				</p>
+
+				<p class="fragment">
+					<span class="color">
+						&lt;span&gt;
+					</span> 
+					Tags sind z.B. grundsätzlich Inline Elemente.
+				</p>
+			</section>
+
+			<section>
+				<h2>Box Modell</h2>
+				<div>
+					<a href="https://de.wikipedia.org/wiki/Cascading_Style_Sheets">Block Element:</a>
+				</div>
+			
+				<img src="img/Boxmodell-detail.png" alt="">
+			</section>
+
+			<section>
+				<h1 class="color">CSS</h1>
+			</section>
+
+			<section>
+				<h2><span class="color">C</span>ascading <span class="color">S</span>tyle <span class="color">S</span>heets</h2>
+
+				<p class="fragment">
+					Mit CSS werden Gestaltungsanweisungen erstellt.
+				</p>
+				<p class="fragment">
+					Hier kommen die  Attribute <span class="color">"class"</span> und <span class="color">"id"</span> der HTML Tags ins Spiel.
+				</p>				
+			</section>
+
+			<section>
+				<h2>CSS Selektoren</h2>
+				<pre><code data-trim contenteditable>
+					p {
+						background-color: white;
+					}	
+
+					.nameDerKlasse {
+						color: pink;
+					}
+
+					#nameDerId {
+						height: 100vh;
+					}
+				</code></pre>
+				<p class="fragment">
+					Der <span class="color">.</span> vor dem Name sagt aus, dass es sich um eine <span class="color">Klasse</span> handelt.							
+				</p>
+				<p class="fragment">
+					Das <span class="color">#</span> vor dem Name sagt aus, dass es sich um eine <span class="color">ID</span> handelt.
+				</p>
+			</section>
+
+			<section>
+				<pre><code data-trim contenteditable>
+					.nameDerKlasse {
+						color: pink;
+					}
+				</code></pre>
+				<p>
+					Zwischen den geschweiften Klammern <span class="color">{}</span> befinden sich die Anweisungen für das Tag. <br>					
+				</p>
+
+				<p class="fragment">
+					Anweisung teilen sich in die Eigenschaft, wie z.B. <span class="color">color</span> und deren Wert, z.B. <span class="color">pink</span>. <br>					
+				</p>
+				<p class="fragment">
+					Der Aufbau ist immer: <br>
+					eigenschaft <span class="color">:</span> wert <span class="color">;</span>
+				</p>
+			</section>
+
+			<section>
+					<p>
+						Anweisungen sind fest definiert und reichen von selbsterklärenden wie <span class="color">color</span> für die Textfarbe über <span class="color">background-color</span> für die Hintergrundfarbe bis hin zu abstrakten wie <span class="color">margin</span> und <span class="color">padding</span>.
+					</p>
+					<p class="fragment">
+						<a href="https://meiert.com/de/publications/indices/css-properties/" target="_blank">Liste aller CSS Anweisungen</a>
+					</p>
+			</section>
+
+			<section>				
+				<p>
+					So können zum Beispiel durch die CSS Anweisungen <span class="color">width:</span> und <span class="color">height:</span> die Breite und Höhe eines Block Elements bestimmt werden.
+				</p>				
+				<p class="fragment">
+					Aber in welchen Maßeinheiten? 
+				</p>
+			</section>
+
+			<section>
+				<h2>
+					CSS Werte und Einheiten 
+				</h2>
+				<p class="fragment">
+					Als mögliche Werte für CSS Anweisungen stehen uns einige Angaben zur Verfügung.					
+				</p>
+				<p class="fragment">
+					Sie unterteilen sich grundsätzlich in <span class="color">absolute</span> und <span class="color">relative</span> Werte.
+				</p>
+				
+				<aside class="notes">
+						Absolute Angaben eignen sich nur bedingt für Digitale Geräte, da Ihre tatsächliche Bildschirmgröße meist stark Variiert. 
+				</aside>				
+			</section>
+
+			<section>
+				<h2>Absolute Werte</h2>
+				<p class="fragment">
+					<span class="fragment">
+						<span class="color">px</span> für Pixel 
+					</span>
+					<br>
+					<span class="fragment">
+						<span class="color">cm</span> für Zentimeter, meist für Drucksachen
+					</span>
+					<br>
+					<span class="fragment">
+						<span class="color">mm</span> für Millimeter, meist für Drucksachen
+					</span>
+					<br>
+					<span class="fragment">
+						<span class="color">pt</span> für Punkte, meist für Drucksachen
+					</span>
+				</p>
+			</section>
+
+			<section>
+				<h2>Relative Werte</h2>
+			
+				<div class="fragment">
+					<span class="color">em</span> für eine Größe relativ zur Schriftgröße 
+					<div class="small">z.B. <span class="color">2em</span> für die doppelte Größe der derzeitigen Schrift steht.</div> 
+				</div>
+				<br>
+				<div class="fragment">
+					<span class="color">%</span> Größe relativ zum Elternelement. 
+					<div class="small">Also <span class="color">width: 50%;</span> steht für eine Breite halb so groß wie die des übergeordneten <span class="color">Tags</span>.</div>
+				</div>
+				<br>
+				<div class="fragment">
+					<span class="color">vh</span> steht für <span class="color">Viewport Height</span> und meint die Höhe des sichtbaren Bereichs.
+				</div>
+				<br>
+				<div class="fragment">
+					<span class="color">vw</span> steht für <span class="color">Viewport Width</span> und meint die Breite des sichtbaren Bereichs.
+				</div>
+
+				<aside class="notes">
+					wie kann sowas ausehen?
+				</aside>
+			</section>
+
+			<!--section>
+				<p class="fragment">
+					Mögliche Werte sind: <span class="fragment"><span class="color">px</span> für Pixel:</span> <br>					
+				</p>
+				<pre class="fragment"><code data-trim contenteditable>
+					.nameDerKlasse {
+						height: 450px;
+					}
+				</code></pre>
+				<p class="fragment">
+					<span class="color">vh</span> steht für <span class="color">Virtual </span> <br>
+					<span class="fragment">
+						Prozent kann etwas trickreich sein, da der Wert des ersten Elternelements genommen wird, das die CSS eigenschaft <span class="color">postition:relative;</span> hat.
+					</span>
+				</p>
+				<p>Weitere Werte: </p>
+				<p class="fragment">
+					<span class="color">%</span> für Prozent. <br>
+					<span class="fragment">
+						Prozent kann etwas trickreich sein, da der Wert des ersten Elternelements genommen wird, das die CSS eigenschaft <span class="color">postition:relative;</span> hat.
+					</span>
+				</p>
+
+			</section-->
+
+			<section>
+				<h2>Beispiel:</h2>
+				<pre><code data-trim contenteditable>
+					body {
+						width: 100vw;
+						height: 100vh;
+					}	
+
+					.erstesElement {
+						margin-top: 10%;
+						margin-bottom: 100px;
+					}
+
+					#nameDerId {
+						font-size: 16px;
+						padding: 1.5em;
+					}
+				</code></pre>
+				<div class="fragment">
+					<a class="small" href="https://www.w3schools.com/cssref/css_units.asp" target="_blank">CSS Werte auf W3Schools</a>
+				</div>
+			</section>
+
+			<section>
+				<h2>
+					Padding und Margin
+				</h2>
+				<p class="fragment">
+					Die Abstände innerhalb eines Blocks werden mit <span class="color">padding:</span> angegeben.
+				</p>
+				<p class="fragment">
+					Abstände zwischen Blöcken werden mit <span class="color">margin:</span> angegeben.
+				</p>
+			</section>
+
+			<section>
+					<img src="img/Boxmodell-detail.png" alt="">
+			</section>
+
+			<section>
+				<h2>
+					Kurzschreibweise: Padding und Margin
+				</h2>
+				
+				<pre><code data-trim contenteditable>
+					.erstesElement {
+						margin-top: 10px;
+						margin-right: 20px;
+						margin-bottom: 30px;
+						margin-left: 40px;
+					}
+				</code></pre>
+
+				<p>
+					Ist exakt das Gleiche wie:
+				</p>
+
+				<pre><code data-trim contenteditable>
+					.erstesElement {
+						margin: 10px 20px 30px 40px;
+					}
+				</code></pre>
+			</section>
+
+			<section>
+					<h2>Display</h2>
+			</section>
+			<section>
+				<p>
+					Die CSS Anweisung <span class="color">display:</span> bestimmt, wie und ob etwas angezeigt wird. 
+					Sie kann folgende Werte bekommen:
+				</p>
+				
+				<div class="fragment">
+					<span class="color">block</span> um etwas als block Element anzuzeigen. 
+					<div class="small">Kann z.B. ein <span class="color">&lt;span&gt;</span> Tag zu einem Block Element machen.</div>
+				</div>
+				<br>
+				<div class="fragment">
+					<span class="color">inline</span> um etwas als inline Element anzuzeigen. 
+					<div class="small">Kann z.B. ein <span class="color">&lt;div&gt;</span> Tag zu einem inline Element machen.</div>
+				</div>
+				<br>
+				<div class="fragment">
+					<span class="color">inline-block</span> ist ein Hybrid aus beiden
+					<div class="small">wie ihn z.B. das <span class="color">&lt;img&gt;</span> Tag standardmäßig nutzt.</div>
+				</div>
+				<br>
+				<div class="fragment">
+					<span class="color">none</span> um etwas <span class="color">nicht</span> anzuzeigen.
+				</div>
+			</section>
+
+			<section>
+				<h2>
+					Beispiele:
+				</h2>
+				
+				<pre><code data-trim contenteditable>
+					img { 
+					  display: none;
+					}
+
+					.inlineElement {
+						display: inline;
+					}
+
+					div {
+						display: inline-block;
+					}
+				</code></pre>
+			</section>
+
+			<section>
+				<h1>Position</h1>
+
+				<p class="fragment">
+					Die CSS Anweisung <span class="color">position:</span> bestimmt die Art der Positionierung des Tags innerhalb der Seite,
+				</p>
+
+				<p class="fragment">
+					Es gibt fünf mögliche Werte für <span class="color">position:</span>
+				</p>
+				<ul>
+					<li class="fragment"><span class="color">static</span></li>
+					<li class="fragment"><span class="color">relative</span></li>					
+					<li class="fragment"><span class="color">absolute</span></li>
+					<li class="fragment"><span class="color">fixed</span></li>
+					<li class="fragment"><span class="color">sticky</span></li>
+				</ul>
+
+			</section>
+
+			<section>	
+				<pre><code data-trim contenteditable>
+					.statischesElement {
+					  position: static;
+					}					
+				</code></pre>
+
+				<p class="fragment">
+					Ist der Standard, den jedes Tag von Haus aus mitbekommt. Wird also nichts weiter angegeben, kommt diese Positionierung zum Tragen.
+				</p>
+				<p class="fragment">
+					Die CSS Eigenschaften <span class="color">top </span>, <span class="color">bottom</span>, <span class="color">left</span>,</span> und <span class="color">right</span> bewirken bei dieser Positionierung nichts.
+				</p>
+			</section>
+	
+			<section>	
+				<pre><code data-trim contenteditable>
+					.relativesElement {
+						position: relative;
+					}					
+				</code></pre>
+
+				<p class="fragment">
+					Das Element mit dieser Positionierung ist noch im Verhältnis zu anderen Elementen der Seite,
+					<span class="fragment">
+						die CSS Eigenschaften <span class="color">top </span>, <span class="color">bottom</span>, <span class="color">left</span>, und <span class="color">right</span> werden das Element <span class="color">relativ</span> zu seiner Position innerhalb der Seite verschieben.
+					</span>
+				</p>				
+			</section>
+
+			<section>	
+				<pre><code data-trim contenteditable>
+					.absolutesElement {
+						position: absolute;
+					}					
+				</code></pre>
+
+				<p class="fragment">
+					Das Element mit dieser Positionierung ist nur mit anderen positionierten Elementen im Verhältnis, aber nicht im Fluss der Seite.					
+				</p>				
+				<div class="fragment">
+					Die CSS Eigenschaften <span class="color">top </span>, <span class="color">bottom</span>, <span class="color">left</span>,</span> und <span class="color">right</span> werden das Element <span class="color">relativ</span> zur Position des Elternelements verschieben.
+				</div>
+			</section>
+
+			<section>	
+				<pre><code data-trim contenteditable>
+					.fixiertesElement {
+						position: fixed;
+					}					
+				</code></pre>
+
+				<p class="fragment">
+					Das Element steht nur im Verhältnis zum sichtbaren Bereich. Wenn die Seite gescrollt wird, bleibt es <span class="color">fix</span> an der gleichen Stelle und scrollt nicht mit.					
+				</p>				
+				<div class="fragment">
+					Die CSS Eigenschaften <span class="color">top </span>, <span class="color">bottom</span>, <span class="color">left</span>,</span> und <span class="color">right</span> werden das Element <span class="color">relativ</span> zum sichbaren Bereich verschieben.
+				</div>
+			</section>
+
+			<section>	
+				<pre><code data-trim contenteditable>
+					.stickyElement {
+						position: sticky;
+					}					
+				</code></pre>
+
+				<p class="fragment">
+					<span class="color">sticky</span> ist ein recht neuer Wert, der noch nicht von allen Browsern unterstützt wird und nur der Vollständigkeit halber hier mit auftaucht. 
+				</p>				
+				<div class="fragment">
+					Im Prinzip ist <span class="color">sticky</span> eine Mischung aus <span class="color">relative</span> und <span class="color">fixed</span>.
+				</div>
+			</section>
+
+			<section>
+				<h2>
+					Fast geschafft! 
+				</h2>
+
+				<p class="fragment">
+					Nur noch eine Sache:
+				</p>
+				<h4 class="fragment">
+					Pseudo Klassen!
+				</h4>
+			</section>
+
+			<section>
+				<h2>Was sind Pseudo Klassen?</h2>
+			</section>
+
+			<section>	
+				<p>
+					Pseudo Klassen werden genutzt um einen bestimmten Zustand eines <span class="color">Tags</span> zu beschreiben.
+					<br>
+					Zum Beispiel:
+				</p>
+				<p class="fragment">
+					Wenn der Mauszeiger über ein Element fährt: 					
+					<br>
+					<span class="color">.erstesElement:hover {}</span>
+				</p>
+				<p class="fragment">
+					Um das erste Tag von vielen anzusprechen: <br>
+					<span class="color">p:first-child {}</span>
+				</p>
+				<p class="fragment">
+					Wenn ein bestimmter Link schon besucht wurde: <br>
+					<span class="color">a:visited {}</span>
+				</p>
+			</section>
+
+			<section>
+				<h1>Genug Theorie</h1>
+				<h4 class="fragment">
+					Selber machen!
+				</h4>
+			</section>
+
+			<section>
+				<h2>Codepen IO</h2>
+
+				<p>
+					Um ohne viel Aufwand HTML und CSS auszuprobieren bietet sich Codepen an. 				
+				</p>				
+			</section>
+
+			<section>
+				<p>
+					Geht auf <a href="https://codepen.io/" target="_blank">codepen.io</a> und clickt links <span class="color">"Create >"</span> an, und wählt <span class="color">"Pen"</span> aus.
+					In dem neuen Fester könnt Ihr als erstes den Editor für Javascript ausblenden:<br>
+					Clickt dazu den Pfeil ganz rechts oben an und wählt <span class="color">"Minimize JS Editor"</span> aus.					
+				</p>
+			</section>
+
+			<section>
+				<p>
+					Euer Fenster sollte jetzt so aussehen:
+				</p>
+				<img src="img/codepen.png" alt="">
+			</section>
+
+			<section>
+				<p>
+					In den HTML Editor eintragen:
+				</p>
+				<pre><code data-trim contenteditable>
+					&lt;body&gt;			  
+					<div class="content">
+						<h1>
+						Überschrift
+						</h1>
+						<img src="" />
+						<p>
+						Content
+						</p>
+					</div>
+					&lt;/body&gt;
+				</code></pre>
+			</section>
+
+			<section>
+				<p>
+					Zwischen <span class="color">&lt;body&gt;</span> und <span class="color">&lt;div class="content"&gt;</span> eintragen.
+				</p>				
+				<pre><code data-trim contenteditable>
+				&lt;nav&gt;				  
+				  <ul class="navigation">
+				    <li>
+				      <a href="#">Menüpunkt</a>
+				    </li>						
+				  </ul>
+				&lt;/nav&gt;				
+				</code></pre>
+			</section>			
+
+			<section>
+				<h1>
+					Danke für die Aufmerksamkeit!
+				</h1>
+				<p>
+					Und nicht vergessen: Wenn Ihr etwas genauer wissen wollt, hilft googeln fast immer weiter!
+				</p>
+				<p>
+					Cheers!
+				</p>
+			</section>	
 		</div>
+	</div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			dependencies: [
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+			]
+		});
+		jumptolast = function () {
+			var lastSlide = Reveal.getTotalSlides();
+			Reveal.slide(lastSlide - 1, 0, 0);
+		}
+	</script>
+</body>
+
 </html>
