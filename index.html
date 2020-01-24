@@ -40,8 +40,9 @@
 				<h2>über mich:</h2>
 				<div>
 					David Ziegler<br>
-					Diplom Designer <br>
 					Freelance Frontend Developer <br>
+					Full-stack Developer bei <a href="https://www.thingylabs.io/">thingylabs.io</a> <br>
+
 				</div>			
 				<aside class="notes">
 					Wenn Ihr fragen habt oder etwas unklar ist, fragt einfach!
@@ -54,6 +55,11 @@
 				</h2>
 				<h3 class="color fragment">HTML</h2>
 				<h3 class="color fragment">CSS</h2>
+
+					<aside class="notes">
+						Der Talk wird, zumindest anfangs, sehr theoretisch. Viel blah über Regeln und sowas. Aber was ich euch heute nahe bringen will, ist, dass das 'spiel' HTML coden wirklich spaß macht, wenn man die Regeln kennt.
+
+					</aside>
 			</section>
 
 			<section>
@@ -133,8 +139,14 @@
 					&lt;/head&gt;
 				</code></pre>
 				<p class="fragment">
-					Der "Kopf" der Seite. Hier werden hauptsächlich Metadaten abgelegt, wie der Titel der Seite, der Autor oder
-					Links der zu benutzten Styles. <br>					
+					Der "Kopf" der Seite. Hier werden Metadaten abgelegt.
+				</p>
+				<p class="fragment">
+					Hier kommt auch das <span class="color">CSS</span>, also der Style für die <span class="color">Tags</span> auf der Seite rein. Entweder direkt geschrieben, oder in Form eines Links auf eine <span class="color">*.css</span> Datei.
+				</p>
+				<p class="fragment small">
+					Weitere Metadaten wären z.B.: <br>
+					der Titel der Seite, der Autor oder das Icon oder das am Browsertab angezeigt wird.
 				</p>
 				<p class="fragment">
 					<span class="color">Kurz:</span> All die Informationen, die NICHT direkt im Browserfenster dargestellt werden.
@@ -194,11 +206,85 @@
 								&lt;body class="nameDerKlasse" id="nameDerId"&gt;&lt;/body&gt;</code></pre>
 
 				<p class="fragment">
-					Der Name der Attribute ist frei wählbar.
+					Der Name der Attribute ist fest, hier z.B. <span class="color">class=""</span>.<br>
+				</p>
+				<p class="fragment">
+					Ihr Wert hingegen ist frei wählbar, <br>
+					hier z.B. <span class="color">nameDerKlasse</span>.
 				</p>
 			</section>
 
 			<section>
+				<h2>Aber was machen diese Attribute eigentlich?</h2>
+				<p class="fragment">
+					Attribute werden für die verschiedensten Dinge benötigt. Ein ganz konkreter Anwendungsfall ist das stylen von <span class="color">HTML Tags</span>.
+				</p>
+				<p class="fragment">Und das macht man mit:</p>
+			</section>
+
+			<section>
+				<h1 class="color">CSS</h1>
+			</section>
+
+			<section>
+				<h2><span class="color">C</span>ascading <span class="color">S</span>tyle <span class="color">S</span>heets</h2>
+
+				<p class="fragment">
+					Mit CSS werden Gestaltungsanweisungen erstellt.
+				</p>
+				<p class="fragment">
+					Hier kommen die  Attribute <span class="color">"class"</span> und <span class="color">"id"</span> der HTML Tags ins Spiel.
+				</p>
+			</section>
+
+			<section>
+				<h2>CSS Selektoren</h2>
+				<pre><code data-trim contenteditable>
+					p {
+						background-color: white;
+					}
+
+					.nameDerKlasse {
+						color: pink;
+					}
+
+					#nameDerId {
+						height: 100vh;
+					}
+				</code></pre>
+				<p class="fragment">
+					Der <span class="color">.</span> vor dem Name sagt aus, dass es sich um eine <span class="color">Klasse</span> handelt.
+				</p>
+				<p class="fragment">
+					Das <span class="color">#</span> vor dem Name sagt aus, dass es sich um eine <span class="color">ID</span> handelt.
+				</p>
+			</section>
+
+			<section>
+				<pre><code data-trim contenteditable>
+					.nameDerKlasse {
+						color: pink;
+					}
+				</code></pre>
+				<p>
+					Zwischen den geschweiften Klammern <span class="color">{}</span> befinden sich die Anweisungen für das Tag. <br>
+				</p>
+
+				<p class="fragment">
+					Anweisungen teilen sich in die Eigenschaft, wie z.B. <span class="color">color</span> und deren Wert, z.B. <span class="color">pink</span>. <br>
+				</p>
+				<p class="fragment">
+					Der Aufbau ist immer: <br>
+					eigenschaft <span class="color">:</span> wert <span class="color">;</span>
+				</p>
+				<aside class="notes">
+					ÜBERLEITUNG BOX MODEL! Ein Kurzer schwenk in die Welt des CSS, jetzt aber wieder zurück zu Tags. Tags sind eigentlich quadrate. und quadrate sind boxen...
+				</aside>
+			</section>
+
+
+
+			<!--section>
 				<h2>Sind wirklich <span class="color">ALLE</span> Webseiten so aufgebaut?</h2>
 				<p class="fragment">
 					Geht auf eine beliebige Seite, clickt rechts und wählt "Seitenquelltext anzeigen". <br>					
@@ -212,7 +298,7 @@
 				<p class="fragment">
 					Findet Ihr das schließende <span class="color">&lt;/head&gt;</span> Tag, und den darauf folgenden <span class="color">&lt;body&gt;</span>?
 				</p>
-			</section>
+			</section-->
 
 			<section>
 					<h1 class="color">Das Box Modell</h1>
@@ -259,7 +345,7 @@
 					Bei Inline Elementen werden die Maße durch den Inhalt vorgegeben. <br>						
 				</p>
 				<p class="fragment">
-						Sie ignorieren Angaben wie <span class="color">Höhe</span> oder <span class="color">Breite</span> und richten sich satt dessen nach Ihrem <span class="color">Inhalt</span>.
+						Sie ignorieren Angaben wie <span class="color">Höhe</span> (height) oder <span class="color">Breite</span> (width) und richten sich satt dessen nach Ihrem <span class="color">Inhalt</span>.
 				</p>
 
 				<p class="fragment">
@@ -275,74 +361,174 @@
 				<div>
 					<a href="https://de.wikipedia.org/wiki/Cascading_Style_Sheets">Block Element:</a>
 				</div>
-			
+
 				<img src="img/Boxmodell-detail.png" alt="">
 			</section>
 
+
 			<section>
-				<h1 class="color">CSS</h1>
+				<h2>Display</h2>
 			</section>
-
 			<section>
-				<h2><span class="color">C</span>ascading <span class="color">S</span>tyle <span class="color">S</span>heets</h2>
-
-				<p class="fragment">
-					Mit CSS werden Gestaltungsanweisungen erstellt.
-				</p>
-				<p class="fragment">
-					Hier kommen die  Attribute <span class="color">"class"</span> und <span class="color">"id"</span> der HTML Tags ins Spiel.
-				</p>				
-			</section>
-
-			<section>
-				<h2>CSS Selektoren</h2>
-				<pre><code data-trim contenteditable>
-					p {
-						background-color: white;
-					}	
-
-					.nameDerKlasse {
-						color: pink;
-					}
-
-					#nameDerId {
-						height: 100vh;
-					}
-				</code></pre>
-				<p class="fragment">
-					Der <span class="color">.</span> vor dem Name sagt aus, dass es sich um eine <span class="color">Klasse</span> handelt.							
-				</p>
-				<p class="fragment">
-					Das <span class="color">#</span> vor dem Name sagt aus, dass es sich um eine <span class="color">ID</span> handelt.
-				</p>
-			</section>
-
-			<section>
-				<pre><code data-trim contenteditable>
-					.nameDerKlasse {
-						color: pink;
-					}
-				</code></pre>
 				<p>
-					Zwischen den geschweiften Klammern <span class="color">{}</span> befinden sich die Anweisungen für das Tag. <br>					
+					Die CSS Anweisung <span class="color">display:</span> bestimmt, wie und ob etwas angezeigt wird.
+					Sie kann folgende Werte bekommen:
+				</p>
+
+				<div class="fragment">
+					<span class="color">block</span> um etwas als block Element anzuzeigen.
+					<div class="small">Kann z.B. ein <span class="color">&lt;span&gt;</span> Tag zu einem Block Element machen.</div>
+				</div>
+				<br>
+				<div class="fragment">
+					<span class="color">inline</span> um etwas als inline Element anzuzeigen.
+					<div class="small">Kann z.B. ein <span class="color">&lt;div&gt;</span> Tag zu einem inline Element machen.</div>
+				</div>
+				<br>
+				<div class="fragment">
+					<span class="color">inline-block</span> ist ein Hybrid aus beiden
+					<div class="small">wie ihn z.B. das <span class="color">&lt;img&gt;</span> Tag standardmäßig nutzt.</div>
+				</div>
+				<br>
+				<div class="fragment">
+					<span class="color">none</span> um etwas <span class="color">nicht</span> anzuzeigen.
+				</div>
+			</section>
+
+			<section>
+				<h2>
+					Beispiele:
+				</h2>
+
+				<pre><code data-trim contenteditable>
+					img {
+					  display: none;
+					}
+
+					.inlineElement {
+						display: inline;
+					}
+
+					div {
+						display: inline-block;
+					}
+				</code></pre>
+			</section>
+
+			<section>
+				<h1>Position</h1>
+
+				<p class="fragment">
+					Die CSS Anweisung <span class="color">position:</span> bestimmt die Art der Positionierung des Tags innerhalb der Seite,
 				</p>
 
 				<p class="fragment">
-					Anweisung teilen sich in die Eigenschaft, wie z.B. <span class="color">color</span> und deren Wert, z.B. <span class="color">pink</span>. <br>					
+					Es gibt fünf mögliche Werte für <span class="color">position:</span>
+				</p>
+				<ul>
+					<li class="fragment"><span class="color">static</span></li>
+					<li class="fragment"><span class="color">relative</span></li>
+					<li class="fragment"><span class="color">absolute</span></li>
+					<li class="fragment"><span class="color">fixed</span></li>
+					<li class="fragment"><span class="color">sticky</span></li>
+				</ul>
+
+			</section>
+
+			<section>
+				<pre><code data-trim contenteditable>
+					.statischesElement {
+					  position: static;
+					}
+				</code></pre>
+
+				<p class="fragment">
+					Ist der Standard, den jedes Tag von Haus aus mitbekommt. Wird also nichts weiter angegeben, kommt diese Positionierung zum Tragen.
 				</p>
 				<p class="fragment">
-					Der Aufbau ist immer: <br>
-					eigenschaft <span class="color">:</span> wert <span class="color">;</span>
+					Die CSS Eigenschaften <span class="color">top </span>, <span class="color">bottom</span>, <span class="color">left</span>,</span> und <span class="color">right</span> bewirken bei dieser Positionierung nichts.
 				</p>
 			</section>
 
 			<section>
-					<p>
-						Anweisungen sind fest definiert und reichen von selbsterklärenden wie <span class="color">color</span> für die Textfarbe über <span class="color">background-color</span> für die Hintergrundfarbe bis hin zu abstrakten wie <span class="color">margin</span> und <span class="color">padding</span>.
-					</p>
-					<p class="fragment">
-						<a href="https://meiert.com/de/publications/indices/css-properties/" target="_blank">Liste aller CSS Anweisungen</a>
-					</p>
+				<pre><code data-trim contenteditable>
+					.relativesElement {
+						position: relative;
+					}
+				</code></pre>
+
+				<p class="fragment">
+					Das Element mit dieser Positionierung ist noch im Verhältnis zu anderen Elementen der Seite,
+					<span class="fragment">
+						die CSS Eigenschaften <span class="color">top </span>, <span class="color">bottom</span>, <span class="color">left</span>, und <span class="color">right</span> werden das Element <span class="color">relativ</span> zu seiner Position innerhalb der Seite verschieben.
+					</span>
+				</p>
+			</section>
+
+			<section>
+				<pre><code data-trim contenteditable>
+					.absolutesElement {
+						position: absolute;
+					}
+				</code></pre>
+
+				<p class="fragment">
+					Das Element mit dieser Positionierung ist nur mit anderen positionierten Elementen im Verhältnis, aber nicht im Fluss der Seite.
+				</p>
+				<div class="fragment">
+					Die CSS Eigenschaften <span class="color">top </span>, <span class="color">bottom</span>, <span class="color">left</span>,</span> und <span class="color">right</span> werden das Element <span class="color">relativ</span> zur Position des Elternelements verschieben.
+				</div>
+			</section>
+
+			<section>
+				<pre><code data-trim contenteditable>
+					.fixiertesElement {
+						position: fixed;
+					}
+				</code></pre>
+
+				<p class="fragment">
+					Das Element steht nur im Verhältnis zum sichtbaren Bereich. Wenn die Seite gescrollt wird, bleibt es <span class="color">fix</span> an der gleichen Stelle und scrollt nicht mit.
+				</p>
+				<div class="fragment">
+					Die CSS Eigenschaften <span class="color">top </span>, <span class="color">bottom</span>, <span class="color">left</span>,</span> und <span class="color">right</span> werden das Element <span class="color">relativ</span> zum sichbaren Bereich verschieben.
+				</div>
+			</section>
+
+			<section>
+				<pre><code data-trim contenteditable>
+					.stickyElement {
+						position: sticky;
+					}
+				</code></pre>
+
+				<p class="fragment">
+					<span class="color">sticky</span> ist ein recht neuer Wert, der noch nicht von allen Browsern unterstützt wird und nur der Vollständigkeit halber hier mit auftaucht.
+				</p>
+				<div class="fragment">
+					Im Prinzip ist <span class="color">sticky</span> eine Mischung aus <span class="color">relative</span> und <span class="color">fixed</span>.
+				</div>
+			</section>
+
+			<section>
+				<p>
+					Das waren die zwei CSS Anweisungen:
+				</p>
+				<p class="fragment"><span class="color">display:</span></p>
+				<p class="fragment">und</p>
+				<p class="fragment"><span class="color">position:</span></p>
+				<p class="fragment">
+					Welche gibt es noch?
+				</p>
+			</section>
+
+			<section>
+				<p>
+					CSS Anweisungen sind fest definiert und reichen von selbsterklärenden wie <span class="color">color</span> für die Textfarbe über <span class="color">background-color</span> für die Hintergrundfarbe bis hin zu abstrakten wie <span class="color">margin</span> und <span class="color">padding</span> für die Außen- bzw. Innenabstände.
+				</p>
+				<p class="fragment">
+					<a href="https://meiert.com/de/publications/indices/css-properties/" target="_blank">Liste aller CSS Anweisungen</a>
+				</p>
 			</section>
 
 			<section>				
@@ -507,150 +693,6 @@
 			</section>
 
 			<section>
-					<h2>Display</h2>
-			</section>
-			<section>
-				<p>
-					Die CSS Anweisung <span class="color">display:</span> bestimmt, wie und ob etwas angezeigt wird. 
-					Sie kann folgende Werte bekommen:
-				</p>
-				
-				<div class="fragment">
-					<span class="color">block</span> um etwas als block Element anzuzeigen. 
-					<div class="small">Kann z.B. ein <span class="color">&lt;span&gt;</span> Tag zu einem Block Element machen.</div>
-				</div>
-				<br>
-				<div class="fragment">
-					<span class="color">inline</span> um etwas als inline Element anzuzeigen. 
-					<div class="small">Kann z.B. ein <span class="color">&lt;div&gt;</span> Tag zu einem inline Element machen.</div>
-				</div>
-				<br>
-				<div class="fragment">
-					<span class="color">inline-block</span> ist ein Hybrid aus beiden
-					<div class="small">wie ihn z.B. das <span class="color">&lt;img&gt;</span> Tag standardmäßig nutzt.</div>
-				</div>
-				<br>
-				<div class="fragment">
-					<span class="color">none</span> um etwas <span class="color">nicht</span> anzuzeigen.
-				</div>
-			</section>
-
-			<section>
-				<h2>
-					Beispiele:
-				</h2>
-				
-				<pre><code data-trim contenteditable>
-					img { 
-					  display: none;
-					}
-
-					.inlineElement {
-						display: inline;
-					}
-
-					div {
-						display: inline-block;
-					}
-				</code></pre>
-			</section>
-
-			<section>
-				<h1>Position</h1>
-
-				<p class="fragment">
-					Die CSS Anweisung <span class="color">position:</span> bestimmt die Art der Positionierung des Tags innerhalb der Seite,
-				</p>
-
-				<p class="fragment">
-					Es gibt fünf mögliche Werte für <span class="color">position:</span>
-				</p>
-				<ul>
-					<li class="fragment"><span class="color">static</span></li>
-					<li class="fragment"><span class="color">relative</span></li>					
-					<li class="fragment"><span class="color">absolute</span></li>
-					<li class="fragment"><span class="color">fixed</span></li>
-					<li class="fragment"><span class="color">sticky</span></li>
-				</ul>
-
-			</section>
-
-			<section>	
-				<pre><code data-trim contenteditable>
-					.statischesElement {
-					  position: static;
-					}					
-				</code></pre>
-
-				<p class="fragment">
-					Ist der Standard, den jedes Tag von Haus aus mitbekommt. Wird also nichts weiter angegeben, kommt diese Positionierung zum Tragen.
-				</p>
-				<p class="fragment">
-					Die CSS Eigenschaften <span class="color">top </span>, <span class="color">bottom</span>, <span class="color">left</span>,</span> und <span class="color">right</span> bewirken bei dieser Positionierung nichts.
-				</p>
-			</section>
-	
-			<section>	
-				<pre><code data-trim contenteditable>
-					.relativesElement {
-						position: relative;
-					}					
-				</code></pre>
-
-				<p class="fragment">
-					Das Element mit dieser Positionierung ist noch im Verhältnis zu anderen Elementen der Seite,
-					<span class="fragment">
-						die CSS Eigenschaften <span class="color">top </span>, <span class="color">bottom</span>, <span class="color">left</span>, und <span class="color">right</span> werden das Element <span class="color">relativ</span> zu seiner Position innerhalb der Seite verschieben.
-					</span>
-				</p>				
-			</section>
-
-			<section>	
-				<pre><code data-trim contenteditable>
-					.absolutesElement {
-						position: absolute;
-					}					
-				</code></pre>
-
-				<p class="fragment">
-					Das Element mit dieser Positionierung ist nur mit anderen positionierten Elementen im Verhältnis, aber nicht im Fluss der Seite.					
-				</p>				
-				<div class="fragment">
-					Die CSS Eigenschaften <span class="color">top </span>, <span class="color">bottom</span>, <span class="color">left</span>,</span> und <span class="color">right</span> werden das Element <span class="color">relativ</span> zur Position des Elternelements verschieben.
-				</div>
-			</section>
-
-			<section>	
-				<pre><code data-trim contenteditable>
-					.fixiertesElement {
-						position: fixed;
-					}					
-				</code></pre>
-
-				<p class="fragment">
-					Das Element steht nur im Verhältnis zum sichtbaren Bereich. Wenn die Seite gescrollt wird, bleibt es <span class="color">fix</span> an der gleichen Stelle und scrollt nicht mit.					
-				</p>				
-				<div class="fragment">
-					Die CSS Eigenschaften <span class="color">top </span>, <span class="color">bottom</span>, <span class="color">left</span>,</span> und <span class="color">right</span> werden das Element <span class="color">relativ</span> zum sichbaren Bereich verschieben.
-				</div>
-			</section>
-
-			<section>	
-				<pre><code data-trim contenteditable>
-					.stickyElement {
-						position: sticky;
-					}					
-				</code></pre>
-
-				<p class="fragment">
-					<span class="color">sticky</span> ist ein recht neuer Wert, der noch nicht von allen Browsern unterstützt wird und nur der Vollständigkeit halber hier mit auftaucht. 
-				</p>				
-				<div class="fragment">
-					Im Prinzip ist <span class="color">sticky</span> eine Mischung aus <span class="color">relative</span> und <span class="color">fixed</span>.
-				</div>
-			</section>
-
-			<section>
 				<h2>
 					Fast geschafft! 
 				</h2>
@@ -705,9 +747,9 @@
 
 			<section>
 				<p>
-					Geht auf <a href="https://codepen.io/" target="_blank">codepen.io</a> und clickt links <span class="color">"Create >"</span> an, und wählt <span class="color">"Pen"</span> aus.
+					Geht auf <a href="https://codepen.io/" target="_blank">codepen.io</a> und clickt links <span class="color">"Start Coding"</span> an.
 					In dem neuen Fester könnt Ihr als erstes den Editor für Javascript ausblenden:<br>
-					Clickt dazu den Pfeil ganz rechts oben an und wählt <span class="color">"Minimize JS Editor"</span> aus.					
+					Clickt dazu den Pfeil ganz rechts oben in der <span class="color">JS</span> Leiste an und wählt <span class="color">"Minimize JS Editor"</span> aus.
 				</p>
 			</section>
 
@@ -720,37 +762,162 @@
 
 			<section>
 				<p>
-					In den HTML Editor eintragen:
+					In das <span class="color">HTML</span> Fenster:
 				</p>
 				<pre><code data-trim contenteditable>
-					&lt;body&gt;			  
-					<div class="content">
-						<h1>
-						Überschrift
-						</h1>
-						<img src="" />
-						<p>
-						Content
-						</p>
-					</div>
-					&lt;/body&gt;
+				<div class="wrapper">
+					<h2>Hallo Welt!</h2>
+				</div>
+				</code></pre>
+
+				<p>
+					In das <span class="color">CSS</span> Fenster:
+				</p>
+				<pre><code data-trim contenteditable>
+				.wrapper {
+					width: 100%;
+					height: 100vh;
+					background: black;
+				}
+				h2 {
+					font-size: 10vw;
+					color: #FF5E99;
+					text-align: center;
+					width: 100%;
+					padding: 40vh 0 0;
+					margin: 0;
+				}
+				</code></pre>
+			</section>
+
+			<section>
+				<pre><code data-trim contenteditable>
+<ul class="navigation">
+  <li>
+    <a href="#">Menüpunkt 1</a>
+  </li>
+  <li>
+    <a href="#">Menüpunkt 2</a>
+  </li>
+</ul>
+				</code></pre>
+
+				<pre><code data-trim contenteditable>
+				.navigation {
+					list-style-type:none;
+					margin: 0;
+					padding: 0;
+				}
+
+				.navigation li {
+					display: inline-block;
+				}
+
+				.navigation li a {
+					color: #008000;
+				}
 				</code></pre>
 			</section>
 
 			<section>
 				<p>
-					Zwischen <span class="color">&lt;body&gt;</span> und <span class="color">&lt;div class="content"&gt;</span> eintragen.
-				</p>				
-				<pre><code data-trim contenteditable>
-				&lt;nav&gt;				  
-				  <ul class="navigation">
-				    <li>
-				      <a href="#">Menüpunkt</a>
-				    </li>						
-				  </ul>
-				&lt;/nav&gt;				
+					Alles was man braucht für eine simple Website ist ein <span class="color">Textdokument</span> mit der Endung .html
+				</p>
+				<p class="fragment">
+					Ihr könnt entweder selbst eins erstellen: Bei Windows: rechtsklick->neu->Textdatei und dann die Dateiendung von <span class="color">.txt</span> in <span class="color">.html</span> umbenennen.
+					<br>
+					<span class="small color">Keine Leerzeichen oder Sonderzeichen im Dateinamen!</span>
+				</p>
+				<p class="fragment">
+					Oder ihr Ladet die von mir vorbereitete Datei <a href="download/index.html" download>hier</a> herunter.
+				</p>
+				<p class="small">
+					Diese Präsentation liegt auf <a target="_blank" href="http://www.goleon.de/html">goleon.de/html</a>
+				</p>
+			</section>
+
+			<!-- section>
+				<p>
+					Inhalt der <span class="color">index.html</span>
+				</p>
+
+				<p class="fragment">
+					der &lt;body&gt; Bereich:
+				</p>
+
+				<pre class="fragment"><code data-trim contenteditable>
+						<div class="wrapper">
+							<h2>Hallo Welt!</h2>
+						</div>
 				</code></pre>
-			</section>			
+			</section>
+
+			<section>
+				<p class="fragment">
+					der &lt;head&gt; Bereich:
+				</p>
+
+				<pre class="fragment"><code data-trim contenteditable>
+						<head>
+							<meta charset="UTF-8">
+							<title>Hallo welt! Eine HTML Seite</title>
+							<style>
+								.wrapper {
+									width: 100%;
+									height: 100vh;
+									background: rgb(217,217,217);
+									background: linear-gradient(180deg, rgba(217,217,217,1) 0%, rgba(130,130,130,1) 59%, rgba(130,130,130,1) 100%);
+								}
+								h2 {
+									font-size: 10vw;
+									font-family: sans-serif;
+									color: #FF5E99;
+									text-align: center;
+									width: 100%;
+									padding: 40vh 0 0;
+									margin: 0;
+								}
+
+								h2:hover {
+									color: lime;
+								}
+
+								body {
+									margin: 0;
+									padding: 0;
+									font-size: 16px;
+								}
+							</style>
+						</head>
+				</code></pre>
+			</section>
+
+			<section>
+				<p>
+					Copy/pasted jetzt den Inhalt des <span class="color">&lt;head&gt;</span> Tags aus der <span class="color">index.html</span> in das HTML Fenster, und den Inhalt von
+				</p>
+				<p>
+					Aus dem HTML Fenster
+				</p>
+			</section-->
+
+			<section>
+				<p>
+					Diese <span class="color">index.html</span> Datei auf einem Webserver wäre schon eine fertige Webseite.
+				</p>
+
+				<p class="fragment">
+					Eine sehr simple, zugegeben. Aber eine Website.
+				</p>
+				
+				<p class="fragment">
+					<a href="mailto:info@goleon.de">info@goleon.de</a>
+				</p>
+
+				<aside class="notes">
+					Ihr könnt mir eure index.html mailen, dann ist sie unter goleon.de/euername erreichbar
+				</aside>
+			</section>
 
 			<section>
 				<h1>
